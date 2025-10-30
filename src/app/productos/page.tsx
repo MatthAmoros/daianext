@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import { products } from '@/data/content'
@@ -27,7 +26,7 @@ export default function ProductosPage() {
 
         {/* Products Grid */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {products.map((product, index) => (
+          {products.map((product) => (
             <div key={product.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               {/* Product Image */}
               <div className="aspect-video bg-gradient-to-br from-blue-100 to-blue-50 p-8 flex items-center justify-center">

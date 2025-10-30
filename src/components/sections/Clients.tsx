@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { clients } from '@/data/content'
 
@@ -41,9 +42,11 @@ export default function Clients() {
               className="group"
             >
               <div className="bg-white rounded-lg p-6 h-32 flex items-center justify-center hover:shadow-md transition-all duration-300">
-                <img
+                <Image
                   src={client.logo}
                   alt={`${client.name} logo`}
+                  width={112}
+                  height={80}
                   className="max-h-20 max-w-28 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                 />
               </div>

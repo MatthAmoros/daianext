@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import { clients } from '@/data/content'
 import Button from '@/components/ui/Button'
 
@@ -70,9 +71,11 @@ export default function ClientesPage() {
               <div key={client.id} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center">
                 <div className="text-center">
                   <div className="h-24 flex items-center justify-center mb-4">
-                    <img
+                    <Image
                       src={client.logo}
                       alt={`${client.name} logo`}
+                      width={128}
+                      height={80}
                       className="max-h-20 max-w-32 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
@@ -91,7 +94,7 @@ export default function ClientesPage() {
           <div className="grid lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-lg">
-                <div className="text-4xl text-[#0057B8] mb-4">"</div>
+                <div className="text-4xl text-[#0057B8] mb-4">&ldquo;</div>
                 <p className="text-gray-700 mb-6 italic">{testimonial.quote}</p>
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.company}</div>
