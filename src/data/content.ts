@@ -1,0 +1,112 @@
+import { Product, Client, Value } from '@/types'
+
+export const products: Product[] = [
+  {
+    id: 'daia-erp',
+    name: 'Daia ERP',
+    description: 'Sistema integral de gestión frutícola que controla toda tu cadena de producción y exportación.',
+    features: [
+      'Gestión integral desde recepción hasta exportación',
+      'Control de inventarios optimizado',
+      'Interfaz intuitiva y moderna',
+      'Reportes en tiempo real'
+    ],
+    image: '/images/daia-erp.png',
+    demoUrl: 'https://demo.daia.cl'
+  },
+  {
+    id: 'daia-hub',
+    name: 'Daia HUB',
+    description: 'Plataforma que simplifica y optimiza cada aspecto de la exportación e importación de fruta.',
+    features: [
+      'Centralización logística completa',
+      'Comunicación transparente entre equipos',
+      'Optimización financiera avanzada',
+      'Gestión documental automatizada'
+    ],
+    image: '/images/daia-hub.gif',
+    demoUrl: 'https://hub.daia.cl'
+  },
+  {
+    id: 'daia-calidad',
+    name: 'Daia Calidad',
+    description: 'Sistema especializado en gestión de calidad para la industria frutícola con control integral de procesos.',
+    features: [
+      'Control de procesos de calidad',
+      'Gestión de certificaciones',
+      'Cumplimiento normativo automatizado',
+      'Dashboards de calidad en tiempo real'
+    ],
+    image: '/images/daia-calidad.png',
+    demoUrl: 'https://calidad.daia.cl'
+  }
+]
+
+export const clients: Client[] = [
+  { id: 'andinexia', name: 'Andinexia', logo: '/clientes/andinexia.jpg' },
+  { id: 'roquefort', name: 'Roquefort', logo: '/clientes/roquefort.png' },
+  { id: 'meena-farms', name: 'Meena Farms', logo: '/clientes/meenafarms.png' },
+  { id: 'erfrut', name: 'Erfrut', logo: '/clientes/erfrut.png' },
+  { id: 'naturesouth', name: 'Nature South', logo: '/clientes/naturesouth.png' },
+  { id: 'provagro', name: 'Provagro', logo: '/clientes/provagro.png' },
+  { id: 'huelpack', name: 'Huelpack', logo: '/clientes/huelpack.png' },
+  { id: 'provex', name: 'Provex', logo: '/clientes/provex.png' }
+]
+
+export const values: Value[] = [
+  {
+    id: 'simplicity',
+    title: 'Simplicidad',
+    description: 'Cada producto está diseñado para maximizar la comodidad y facilidad de uso, mejorando la productividad.',
+    icon: '🎯'
+  },
+  {
+    id: 'responsibility',
+    title: 'Responsabilidad',
+    description: 'Somos responsables en cada paso, ofreciendo soluciones fiables y duraderas que impulsen tu éxito.',
+    icon: '🛡️'
+  },
+  {
+    id: 'transparency',
+    title: 'Transparencia',
+    description: 'Utilizamos tecnología de punta para ofrecerte herramientas transparentes con datos precisos en tiempo real.',
+    icon: '🔍'
+  },
+  {
+    id: 'efficiency',
+    title: 'Eficiencia',
+    description: 'Conocemos los procesos productivos y sabemos qué información necesitas y cuándo la necesitas.',
+    icon: '⚡'
+  }
+]
+
+export const navigation = {
+  main: [
+    { name: 'Inicio', href: '/' },
+    {
+      name: 'Empresa',
+      href: '/empresa',
+      submenu: [
+        { name: 'Sobre nosotros', href: '/empresa#about' },
+        { name: 'Nuestros valores', href: '/empresa#values' },
+        { name: 'Business Intelligence', href: '/empresa#bi' }
+      ]
+    },
+    {
+      name: 'Productos',
+      href: '/productos',
+      submenu: [
+        { name: 'Daia ERP', href: '/productos/daia-erp' },
+        { name: 'Daia HUB', href: '/productos/daia-hub' },
+        { name: 'Daia Calidad', href: '/productos/daia-calidad' }
+      ]
+    },
+    { name: 'Clientes', href: '/clientes' },
+    { name: 'Contacto', href: '/contacto' }
+  ],
+  external: [
+    { name: 'Centro de ayuda', href: 'https://ayuda.daia.cl' },
+    { name: 'Portal cliente', href: 'https://clientes.daia.cl' },
+    { name: 'Soporte', href: 'https://clientes.daia.cl/soporte' }
+  ]
+}
