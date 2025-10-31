@@ -107,6 +107,6 @@ export const navigation = {
   external: [
     { name: 'Centro de ayuda', href: 'https://ayuda.daia.cl' },
     { name: 'Portal cliente', href: 'https://clientes.daia.cl' },
-    { name: 'Soporte', href: 'https://clientes.daia.cl/soporte' }
+    { name: 'Abrir ticket', href: 'https://clientes.daia.cl/soporte' }
   ]
 }

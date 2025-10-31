@@ -62,12 +62,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 text-center max-w-6xl"
           >
-             Desarrollamos {' '}<span className="text-[#0057B8]">tecnología</span>{' '} para la {' '}
+             Tecnología de {' '}<span className="text-[#0057B8]">trazabilidad</span>{' '} para la {' '}
             <span className="text-[#0057B8]">agroindustria</span>{' '}
             frutícola.
           </motion.h1>
 
-          {/* Video Visual */}
+          {/* Image Visual */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,15 +75,11 @@ export default function Hero() {
             className="relative w-full max-w-4xl py-8"
           >
             <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-[#0057B8]/10 to-[#003865]/10 p-2 pb-2">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
+              <img
+                src="/daiareactui1.png"
+                alt="Daia Systems UI"
                 className="w-full h-auto rounded-xl shadow-lg object-cover"
-              >
-                <source src="/iniciodaierp.mp4" type="video/mp4" />
-              </video>
+              />
             </div>
           </motion.div>
 
@@ -92,19 +88,19 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-gray-600 text-center max-w-4xl leading-relaxed"
+            className="text-lg md:text-xl text-black text-center max-w-4xl leading-relaxed"
           >
-            Ecosistema de soluciones que se integran para obtener una trazabilidad completa de la fruta, desde la
-            {' '}<strong className="text-gray-900">recepción</strong>{' '}
-            hasta su {' '}<strong className="text-gray-900">exportación</strong>.{' '}
+            Sistemas que se integran para obtener una trazabilidad completa de la fruta, desde la
+            {' '}<strong className="text-black">recepción</strong>{' '}
+            hasta su {' '}<strong className="text-black">exportación</strong>.{' '}
             ERP, HUB, agente para líneas de proceso de las marcas mas utilizadas, integraciones con sistemas y maquinaria, sensores de temperatura y más.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-gray-600 text-center max-w-4xl leading-relaxed"
-          >Controlamos por completo el proceso de packing de tu fruta.</motion.p>
+            className="text-lg md:text-xl text-black text-center max-w-4xl leading-relaxed"
+          >Tu fruta, bajo control.</motion.p>
 
           {/* Botones */}
           <motion.div
@@ -121,10 +117,10 @@ export default function Hero() {
               Nuestros productos
             </GradientButton>
 
-            <GradientButton size="lg" className="group whitespace-nowrap">
+            {/* <GradientButton size="lg" className="group whitespace-nowrap">
               <Play size={20} className="group-hover:animate-pulse flex-shrink-0" />
               Ver demostración
-            </GradientButton>
+            </GradientButton> */}
           </motion.div>
 
           {/* Stats */}

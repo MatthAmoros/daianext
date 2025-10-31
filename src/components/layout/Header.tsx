@@ -13,36 +13,29 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
   return (
-    <header className="fixed top-0 z-40 w-full bg-[#0057B8]/95 backdrop-blur-sm border-b border-[#003865]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <Image
-                src="/iconoblancodaia.png"
-                alt="Daia Systems"
-                width={500}
-                height={290}
-                className="h-10 w-auto"
-              />
-            </motion.div>
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              className="text-lg font-medium text-white"
-            >
-              Daia Systems
-            </motion.span>
-          </Link>
+    <header className="fixed top-0 z-40 w-full bg-[#0057B8] backdrop-blur-sm border-b border-[#003865]">
+      <div className="mx-auto max-w-[1400px] px-8 sm:px-12 lg:px-16">
+        <div className="flex h-14 items-center justify-between">
+          {/* Logo and Navigation - Left Side */}
+          <div className="flex items-center space-x-6">
+            <Link href="/" className="flex items-center -ml-[3px]">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <Image
+                  src="/iconoblancodaia.png"
+                  alt="Daia Systems"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10"
+                />
+              </motion.div>
+            </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-4">
             {navigation.main.map((item) => (
               <div
                 key={item.name}
@@ -52,7 +45,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center space-x-1 text-sm font-medium text-white hover:text-blue-200 transition-colors"
+                  className="flex items-center space-x-1 text-[15px] text-white hover:text-blue-200 transition-colors"
                 >
                   <span>{item.name}</span>
                   {item.submenu && <ChevronDown size={14} />}
@@ -81,39 +74,35 @@ export default function Header() {
                 </AnimatePresence>
               </div>
             ))}
+            </nav>
+          </div>
 
+          {/* Right Side - External Links and Login Button */}
+          <div className="hidden md:flex items-center space-x-4">
             {/* External Links */}
-            <div className="flex items-center space-x-3">
-              {navigation.external.filter(item => item.name !== 'Portal cliente').map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-white hover:text-blue-200 transition-colors"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
+            {navigation.external.filter(item => item.name !== 'Portal cliente').map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[15px] text-white hover:text-blue-200 transition-colors"
+              >
+                {item.name}
+              </a>
+            ))}
 
-            <Link href="/contacto">
-              <Button variant="primary" size="sm">
-                Contactar
-              </Button>
-            </Link>
-
+            {/* Login Button */}
             <a
               href="https://clientes.daia.cl"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="white" size="sm" className="flex items-center gap-1">
+              <button className="h-10 px-4 text-[15px] rounded-lg border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#0057B8] transition-colors font-medium">
                 Portal cliente
-                <ChevronRight size={16} />
-              </Button>
+              </button>
             </a>
-          </nav>
+          </div>
 
           {/* Mobile menu button */}
           <button
