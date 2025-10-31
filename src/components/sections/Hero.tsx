@@ -72,11 +72,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative w-full max-w-4xl py-8"
+            className="relative w-full max-w-7xl py-8"
           >
             <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-[#0057B8]/10 to-[#003865]/10 p-2 pb-2">
               <img
-                src="/daiareactui1.png"
+                src="/daiareactui.png"
                 alt="Daia Systems UI"
                 className="w-full h-auto rounded-xl shadow-lg object-cover"
               />
