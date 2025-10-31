@@ -94,7 +94,7 @@ export default function Header() {
 
             {/* Login Button */}
             <a
-              href="https://clientes.daia.cl"
+              href="https://clientes.daia.cl/web/login"
               target="_blank"
               rel="noopener noreferrer"
             >

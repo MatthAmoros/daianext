@@ -135,7 +135,7 @@ export default function Hero() {
               <div className="text-sm text-gray-600">Clientes activos</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-[#0057B8]">12M+</div>
+              <div className="text-2xl font-bold text-[#0057B8]">40M+</div>
               <div className="text-sm text-gray-600">Kg procesados</div>
             </div>
             <div className="text-center">
