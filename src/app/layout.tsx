@@ -11,6 +11,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://daia.cl'),
   title: {
     default: 'Daia Systems - Especialistas en sistemas de gestión frutícola',
     template: '%s | Daia Systems',

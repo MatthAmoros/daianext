@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, Play } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import GradientButton from '@/components/ui/GradientButton'
 import { useRef } from 'react'
 import Image from 'next/image'

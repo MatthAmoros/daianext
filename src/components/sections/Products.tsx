@@ -39,9 +39,11 @@ export default function Products() {
             >
               <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
-                    <div className="text-6xl opacity-20">
-                      {product.id === 'daia-erp' ? '📊' : '🌐'}
+                  <div className="aspect-video bg-gradient-to-br from-[#0057B8]/5 to-[#003865]/5 flex items-center justify-center p-8">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className={`text-7xl ${product.id === 'daia-erp' ? 'text-[#0057B8]' : 'text-[#003865]'} opacity-30 font-bold`}>
+                        {product.id === 'daia-erp' ? 'ERP' : 'HUB'}
+                      </div>
                     </div>
                   </div>
                 </div>

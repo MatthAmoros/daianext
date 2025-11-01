@@ -23,7 +23,7 @@ export default function ContactoPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Aquí implementarías la lógica de envío del formulario
-    console.log('Form submitted:', formData)
+    // En producción, esto se conectaría a un API endpoint
     alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.')
   }
 
