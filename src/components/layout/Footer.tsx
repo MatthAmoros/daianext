@@ -95,14 +95,22 @@ export default function Footer() {
               <p>Email: info@daia.cl</p>
               <p>Teléfono: +56227603491</p>
               <div className="mt-4">
-                <p className="font-medium text-white mb-2">Centro de ayuda</p>
+                <p className="font-medium text-white mb-2">Recursos</p>
                 <a
                   href="https://help.daia.cl"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors block mb-1"
+                >
+                  Centro de ayuda
+                </a>
+                <a
+                  href="https://ayuda.daia.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors block"
                 >
-                  help.daia.cl
+                  Documentación
                 </a>
               </div>
             </div>
