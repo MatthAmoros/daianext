@@ -6,10 +6,10 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
+            <div className="flex items-center space-x-2 mb-4 justify-center md:justify-start">
               <Image
                 src="/iconoblancodaia.png"
                 alt="Daia Systems"
@@ -108,7 +108,7 @@ export default function Footer() {
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-4 mt-4">
+            <div className="flex space-x-4 mt-4 justify-center md:justify-start">
               <a
                 href="https://github.com/Daia-Systems-SPA"
                 target="_blank"

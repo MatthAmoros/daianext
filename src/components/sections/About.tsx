@@ -19,7 +19,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="order-2 lg:order-1"
+            className="order-1 lg:order-1 text-center lg:text-left"
           >
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="space-y-4 flex flex-col items-center lg:items-start"
             >
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-[#0057B8] rounded-full"></div>
@@ -71,7 +71,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="order-1 lg:order-2"
+            className="order-2 lg:order-2"
           >
             <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-[#0057B8]/10 to-[#003865]/10 p-1">
               <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl">

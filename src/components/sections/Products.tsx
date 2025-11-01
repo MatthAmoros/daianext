@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { products } from '@/data/content'
 import Button from '@/components/ui/Button'
 
@@ -48,7 +48,7 @@ export default function Products() {
               </div>
 
               <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                <div className="space-y-6">
+                <div className="space-y-6 text-center lg:text-left">
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                       {product.name}
@@ -58,7 +58,7 @@ export default function Products() {
                     </p>
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-3 flex flex-col items-center lg:items-start">
                     {product.features.map((feature, featureIndex) => (
                       <motion.div
                         key={featureIndex}
@@ -77,7 +77,7 @@ export default function Products() {
                     ))}
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
                     <Button className="group">
                       Conocer más
                       <ArrowRight
@@ -85,13 +85,6 @@ export default function Products() {
                         className="ml-2 group-hover:translate-x-1 transition-transform"
                       />
                     </Button>
-
-                    {product.demoUrl && (
-                      <Button variant="outline" className="group">
-                        <ExternalLink size={18} className="mr-2" />
-                        Ver demo
-                      </Button>
-                    )}
                   </div>
                 </div>
               </div>
