@@ -75,6 +75,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
+      </head>
       <body className={`${montserrat.className} antialiased`}>
         <Header />
         <main className="pt-16">{children}</main>

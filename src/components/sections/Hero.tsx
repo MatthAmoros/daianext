@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, Play } from 'lucide-react'
 import GradientButton from '@/components/ui/GradientButton'
 import { useRef } from 'react'
+import Image from 'next/image'
 
 export default function Hero() {
   const ref = useRef(null)
@@ -22,10 +23,8 @@ export default function Hero() {
         className="absolute inset-0 z-0 opacity-80"
       >
         {/* Imagen para móvil */}
-        <motion.img
-          src="/FondoHeroMobile.png"
-          alt="Fondo Hero"
-          className="w-full h-full object-cover md:hidden"
+        <motion.div
+          className="w-full h-full md:hidden relative"
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{
             scale: 1,
@@ -35,12 +34,20 @@ export default function Hero() {
             duration: 1.5,
             ease: "easeOut"
           }}
-        />
+        >
+          <Image
+            src="/FondoHeroMobile.png"
+            alt="Fondo Hero"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+            quality={85}
+          />
+        </motion.div>
         {/* Imagen para desktop */}
-        <motion.img
-          src="/FondoHero.png"
-          alt="Fondo Hero"
-          className="hidden md:block w-full h-full object-contain"
+        <motion.div
+          className="hidden md:block w-full h-full relative"
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{
             scale: 1,
@@ -50,7 +57,17 @@ export default function Hero() {
             duration: 1.5,
             ease: "easeOut"
           }}
-        />
+        >
+          <Image
+            src="/FondoHero.png"
+            alt="Fondo Hero"
+            fill
+            priority
+            className="object-contain"
+            sizes="100vw"
+            quality={85}
+          />
+        </motion.div>
       </motion.div>
 
       <div className="w-full h-full object-contain relative z-10 py-24 md:py-32 lg:py-20 px-4 sm:px-6 lg:px-8">
@@ -75,10 +92,14 @@ export default function Hero() {
             className="relative w-full max-w-7xl py-8"
           >
             <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-[#0057B8]/10 to-[#003865]/10 p-2 pb-2">
-              <img
+              <Image
                 src="/daiareactui.png"
                 alt="Daia Systems UI"
+                width={1920}
+                height={1080}
                 className="w-full h-auto rounded-xl shadow-lg object-cover"
+                priority
+                quality={85}
               />
             </div>
           </motion.div>
