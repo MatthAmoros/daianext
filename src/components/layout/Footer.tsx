@@ -97,14 +97,6 @@ export default function Footer() {
               <div className="mt-4">
                 <p className="font-medium text-white mb-2">Recursos</p>
                 <a
-                  href="https://help.daia.cl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors block mb-1"
-                >
-                  Centro de ayuda
-                </a>
-                <a
                   href="https://ayuda.daia.cl"
                   target="_blank"
                   rel="noopener noreferrer"
