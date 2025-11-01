@@ -140,7 +140,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
-            © Copyright 2025 Daia Systems. Desarrollado con Next.js desde Chile.
+            © Copyright 2025 Daia Systems. Desarrollado con Next.js
           </p>
           <div className="flex items-center space-x-2 mt-4 md:mt-0">
             <Image

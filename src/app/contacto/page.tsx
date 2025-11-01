@@ -57,7 +57,7 @@ export default function ContactoPage() {
       icon: Clock,
       title: 'Horarios',
       info: 'Lun - Vie: 9:00 - 18:00',
-      description: 'Soporte técnico 24/7'
+      description: 'Horario de atención'
     }
   ]
 
