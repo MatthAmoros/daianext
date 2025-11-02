@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { products } from '@/data/content'
 
 export default function Products() {
@@ -39,9 +40,19 @@ export default function Products() {
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                   <div className="aspect-video bg-gradient-to-br from-[#0057B8]/5 to-[#003865]/5 flex items-center justify-center p-8">
                     <div className="w-full h-full flex items-center justify-center">
-                      <div className={`text-7xl ${product.id === 'daia-erp' ? 'text-[#0057B8]' : 'text-[#003865]'} opacity-30 font-bold`}>
-                        {product.id === 'daia-erp' ? 'ERP' : 'HUB'}
-                      </div>
+                      <Image
+                        src={
+                          product.id === 'daia-erp'
+                            ? '/daiaerp.png'
+                            : product.id === 'daia-hub'
+                            ? '/daiahub.png'
+                            : '/daiacalidad.png'
+                        }
+                        alt={`${product.name} Screenshot`}
+                        width={500}
+                        height={350}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                   </div>
                 </div>

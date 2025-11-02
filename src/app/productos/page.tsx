@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 import Button from '@/components/ui/Button'
@@ -30,18 +31,24 @@ export default function ProductosPage() {
             <div key={product.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               {/* Product Image */}
               <div className="aspect-video bg-gradient-to-br from-blue-100 to-blue-50 p-8 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-[#0057B8] rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-3xl font-bold">
-                      {product.name.split(' ')[1]}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">{product.name}</h3>
-                </div>
+                <Image
+                  src={
+                    product.id === 'daia-erp'
+                      ? '/daiaerp.png'
+                      : product.id === 'daia-hub'
+                      ? '/daiahub.png'
+                      : '/daiacalidad.png'
+                  }
+                  alt={`${product.name} Dashboard`}
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               {/* Product Content */}
               <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{product.name}</h3>
                 <p className="text-gray-600 mb-6 text-lg">
                   {product.description}
                 </p>
