@@ -1,9 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
 import { products } from '@/data/content'
-import Button from '@/components/ui/Button'
 
 export default function Products() {
   return (
@@ -77,16 +75,6 @@ export default function Products() {
                         <span className="text-gray-700">{feature}</span>
                       </motion.div>
                     ))}
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-                    <Button className="group">
-                      Conocer más
-                      <ArrowRight
-                        size={18}
-                        className="ml-2 group-hover:translate-x-1 transition-transform"
-                      />
-                    </Button>
                   </div>
                 </div>
               </div>

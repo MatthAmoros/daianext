@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, CheckCircle, ExternalLink } from 'lucide-react'
+import { ArrowLeft, CheckCircle } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
@@ -71,10 +71,6 @@ export default function DaiaHubPage() {
               Plataforma que simplifica y optimiza cada aspecto de la exportación e importación de fruta.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="flex items-center space-x-2">
-                <ExternalLink size={20} />
-                <span>Ver demo</span>
-              </Button>
               <Button variant="outline" size="lg">
                 Solicitar información
               </Button>
@@ -158,10 +154,6 @@ export default function DaiaHubPage() {
             Descubre cómo Daia HUB puede optimizar cada embarque y maximizar tu rentabilidad.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="white" size="lg" className="flex items-center space-x-2">
-              <ExternalLink size={20} />
-              <span>Probar demo gratuita</span>
-            </Button>
             <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#0057B8]">
               Agendar reunión
             </Button>

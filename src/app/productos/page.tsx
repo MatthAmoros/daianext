@@ -70,16 +70,6 @@ export default function ProductosPage() {
                       <ArrowRight size={18} />
                     </Button>
                   </Link>
-                  <a
-                    href={product.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1"
-                  >
-                    <Button variant="outline" className="w-full">
-                      Ver demo
-                    </Button>
-                  </a>
                 </div>
               </div>
             </div>
