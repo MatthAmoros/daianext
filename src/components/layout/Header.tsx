@@ -15,27 +15,31 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-40 w-full bg-[#0057B8] backdrop-blur-sm border-b border-[#003865]">
       <div className="mx-auto max-w-[1400px] px-8 sm:px-12 lg:px-16">
-        <div className="flex h-14 items-center justify-between">
-          {/* Logo and Navigation - Left Side */}
-          <div className="flex items-center space-x-6">
-            <Link href="/" className="flex items-center -ml-[3px]">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-              >
-                <Image
-                  src="/iconoblancodaia.png"
-                  alt="Daia Systems"
-                  width={40}
-                  height={40}
-                  className="w-10 h-10"
-                />
-              </motion.div>
-            </Link>
+        <div className="flex h-14 items-center justify-between relative">
+          {/* Logo - Always Left */}
+          <Link href="/" className="flex items-center -ml-[3px] z-10">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <Image
+                src="/iconoblancodaia.png"
+                alt="Daia Systems"
+                width={40}
+                height={40}
+                className="w-10 h-10"
+              />
+            </motion.div>
+          </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-4">
+          {/* Daia Systems Text - Center on Mobile */}
+          <div className="md:hidden absolute left-1/2 -translate-x-1/2 pointer-events-none">
+            <span className="text-white font-semibold text-lg whitespace-nowrap">Daia Systems</span>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-4 flex-1 ml-6">
             {navigation.main.map((item) => (
               <div
                 key={item.name}
@@ -74,8 +78,7 @@ export default function Header() {
                 </AnimatePresence>
               </div>
             ))}
-            </nav>
-          </div>
+          </nav>
 
           {/* Right Side - External Links and Login Button */}
           <div className="hidden md:flex items-center space-x-4">
@@ -106,7 +109,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-white"
+            className="md:hidden p-2 text-white z-10"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -172,11 +175,6 @@ export default function Header() {
                       <ChevronRight size={16} />
                     </Button>
                   </a>
-                  <Link href="/contacto">
-                    <Button variant="primary" size="sm" className="w-full">
-                      Contactar
-                    </Button>
-                  </Link>
                 </div>
               </nav>
             </motion.div>
