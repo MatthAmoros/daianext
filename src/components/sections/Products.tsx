@@ -46,6 +46,8 @@ export default function Products() {
                             ? '/daiaerp.png'
                             : product.id === 'daia-hub'
                             ? '/daiahub.png'
+                            : product.id === 'daia-agent'
+                            ? '/daiaagent/operador_con_datos.png'
                             : '/daiacalidad.png'
                         }
                         alt={`${product.name} Screenshot`}

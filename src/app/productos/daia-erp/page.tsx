@@ -37,6 +37,10 @@ export default function DaiaERPPage() {
     {
       title: 'Cumplimiento normativo',
       description: 'Cumple con todas las normativas y estándares de calidad requeridos para la exportación.'
+    },
+    {
+      title: 'Business Intelligence',
+      description: 'Dashboards interactivos, reportes personalizables y análisis predictivo para transformar tus datos en decisiones estratégicas.'
     }
   ]
 
@@ -71,9 +75,11 @@ export default function DaiaERPPage() {
               Sistema integral de gestión frutícola que controla toda tu cadena de producción y exportación.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="outline" size="lg">
-                Solicitar información
-              </Button>
+              <Link href="/contacto?interes=daia-erp">
+                <Button variant="outline" size="lg">
+                  Solicitar información
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="relative">
@@ -122,9 +128,11 @@ export default function DaiaERPPage() {
             Descubre cómo Daia ERP puede transformar tu operación y maximizar tu rentabilidad.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#0057B8]">
-              Agendar reunión
-            </Button>
+            <Link href="/contacto?interes=daia-erp">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#0057B8]">
+                Agendar reunión
+              </Button>
+            </Link>
           </div>
         </section>
       </div>

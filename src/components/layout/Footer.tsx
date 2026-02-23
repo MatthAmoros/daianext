@@ -66,18 +66,23 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Productos</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/productos#daia-erp" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/productos/daia-erp" className="text-gray-400 hover:text-white transition-colors">
                   Daia ERP
                 </Link>
               </li>
               <li>
-                <Link href="/productos#daia-hub" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/productos/daia-hub" className="text-gray-400 hover:text-white transition-colors">
                   Daia HUB
                 </Link>
               </li>
               <li>
-                <Link href="/productos#daia-calidad" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/productos/daia-calidad" className="text-gray-400 hover:text-white transition-colors">
                   Daia Calidad
+                </Link>
+              </li>
+              <li>
+                <Link href="/productos/daia-agent" className="text-gray-400 hover:text-white transition-colors">
+                  Daia Agent
                 </Link>
               </li>
               <li>
@@ -140,7 +145,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
-            © Copyright 2025 Daia Systems. Desarrollado con Next.js
+            © Copyright 2026 Daia Systems. Desarrollado con Next.js
           </p>
           <div className="flex items-center space-x-2 mt-4 md:mt-0">
             <Image

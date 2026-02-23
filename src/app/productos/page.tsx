@@ -37,6 +37,8 @@ export default function ProductosPage() {
                       ? '/daiaerp.png'
                       : product.id === 'daia-hub'
                       ? '/daiahub.png'
+                      : product.id === 'daia-agent'
+                      ? '/daiaagent/operador_con_datos.png'
                       : '/daiacalidad.png'
                   }
                   alt={`${product.name} Dashboard`}
@@ -88,7 +90,7 @@ export default function ProductosPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             ¿Cuál es el mejor para tu empresa?
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-6 border-2 border-blue-200 rounded-lg">
               <h3 className="text-xl font-bold text-[#0057B8] mb-4">Daia ERP</h3>
               <p className="text-gray-600 mb-4">Ideal para:</p>
@@ -107,6 +109,26 @@ export default function ProductosPage() {
                 <li>• Comercializadoras de fruta</li>
                 <li>• Optimización logística</li>
                 <li>• Gestión de múltiples embarques</li>
+              </ul>
+            </div>
+            <div className="p-6 border-2 border-orange-200 rounded-lg">
+              <h3 className="text-xl font-bold text-orange-600 mb-4">Daia Calidad</h3>
+              <p className="text-gray-600 mb-4">Ideal para:</p>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Control de calidad en packing</li>
+                <li>• Gestión de certificaciones</li>
+                <li>• Cumplimiento de normativas</li>
+                <li>• Auditorías y reportes de calidad</li>
+              </ul>
+            </div>
+            <div className="p-6 border-2 border-purple-200 rounded-lg">
+              <h3 className="text-xl font-bold text-purple-600 mb-4">Daia Agent</h3>
+              <p className="text-gray-600 mb-4">Ideal para:</p>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Líneas de clasificación automatizadas</li>
+                <li>• Integración con Tomra, Unitec, Aweta</li>
+                <li>• Etiquetado automático ZPL</li>
+                <li>• Control de paletizado en línea</li>
               </ul>
             </div>
           </div>

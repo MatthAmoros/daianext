@@ -71,9 +71,11 @@ export default function DaiaCalidadPage() {
               Sistema especializado en gestión de calidad para la industria frutícola con control integral de procesos y cumplimiento normativo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="outline" size="lg">
-                Solicitar información
-              </Button>
+              <Link href="/contacto?interes=daia-calidad">
+                <Button variant="outline" size="lg">
+                  Solicitar información
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="relative">
@@ -122,9 +124,11 @@ export default function DaiaCalidadPage() {
             Descubre cómo Daia Calidad puede garantizar los más altos estándares de calidad en tu operación.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#0057B8]">
-              Agendar reunión
-            </Button>
+            <Link href="/contacto?interes=daia-calidad">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#0057B8]">
+                Agendar reunión
+              </Button>
+            </Link>
           </div>
         </section>
       </div>

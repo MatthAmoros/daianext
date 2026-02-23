@@ -1,16 +1,14 @@
 'use client'
 
-import { useState } from 'react'
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react'
+import { useState, useEffect, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
-// Note: Metadata should be handled differently in client components
-// export const metadata: Metadata = {
-//   title: 'Contacto - Daia Systems | Contáctanos',
-//   description: 'Ponte en contacto con nuestro equipo de especialistas. Estamos aquí para ayudarte a transformar tu operación frutícola.',
-// }
+type Status = 'idle' | 'loading' | 'success' | 'error'
 
-export default function ContactoPage() {
+function ContactoForm() {
+  const searchParams = useSearchParams()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,45 +17,63 @@ export default function ContactoPage() {
     message: '',
     interest: ''
   })
+  const [status, setStatus] = useState<Status>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    const interes = searchParams.get('interes')
+    if (interes) {
+      setFormData(prev => ({ ...prev, interest: interes }))
+    }
+  }, [searchParams])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Aquí implementarías la lógica de envío del formulario
-    // En producción, esto se conectaría a un API endpoint
-    alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.')
+    setStatus('loading')
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!res.ok) throw new Error('Error en el servidor')
+
+      setStatus('success')
+      setFormData({ name: '', email: '', company: '', phone: '', message: '', interest: '' })
+    } catch {
+      setStatus('error')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email',
-      info: 'contacto@daia.cl',
+      info: 'info@daia.cl',
       description: 'Escríbenos para consultas generales'
     },
     {
       icon: Phone,
       title: 'Teléfono',
-      info: '+56 9 xxxx xxxx',
+      info: '+56 22 760 3491',
       description: 'Horario de atención comercial'
     },
     {
       icon: MapPin,
       title: 'Ubicación',
-      info: 'Santiago, Chile',
-      description: 'Oficinas centrales'
+      info: 'Carmen 487, Oficina 301',
+      description: 'Curicó, Chile'
     },
     {
       icon: Clock,
       title: 'Horarios',
       info: 'Lun - Vie: 9:00 - 18:00',
-      description: 'Horario de atención'
+      description: 'Hora de Chile continental'
     }
   ]
 
@@ -79,117 +95,165 @@ export default function ContactoPage() {
           {/* Contact Form */}
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Envíanos un mensaje</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Nombre completo *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent"
-                    placeholder="Tu nombre"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent"
-                    placeholder="tu@email.com"
-                  />
-                </div>
-              </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                    Empresa
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent"
-                    placeholder="Nombre de tu empresa"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Teléfono
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent"
-                    placeholder="+56 9 xxxx xxxx"
-                  />
-                </div>
+            {status === 'success' ? (
+              <div className="flex flex-col items-center justify-center py-16 text-center">
+                <CheckCircle className="text-green-500 mb-4" size={56} />
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">¡Mensaje enviado!</h3>
+                <p className="text-gray-600 mb-6">Gracias por contactarnos. Nos pondremos en contacto contigo a la brevedad.</p>
+                <Button variant="outline" onClick={() => setStatus('idle')}>
+                  Enviar otro mensaje
+                </Button>
               </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      Nombre completo *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      disabled={status === 'loading'}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent disabled:opacity-50"
+                      placeholder="Tu nombre"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      disabled={status === 'loading'}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent disabled:opacity-50"
+                      placeholder="tu@email.com"
+                    />
+                  </div>
+                </div>
 
-              <div>
-                <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
-                  ¿En qué estás interesado?
-                </label>
-                <select
-                  id="interest"
-                  name="interest"
-                  value={formData.interest}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent"
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                      Empresa
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      disabled={status === 'loading'}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent disabled:opacity-50"
+                      placeholder="Nombre de tu empresa"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Teléfono
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      disabled={status === 'loading'}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent disabled:opacity-50"
+                      placeholder="+56 9 xxxx xxxx"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
+                    ¿En qué estás interesado?
+                  </label>
+                  <select
+                    id="interest"
+                    name="interest"
+                    value={formData.interest}
+                    onChange={handleChange}
+                    disabled={status === 'loading'}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent disabled:opacity-50"
+                  >
+                    <option value="">Selecciona una opción</option>
+                    <option value="demostracion">Demostración</option>
+                    <option value="daia-erp">Daia ERP</option>
+                    <option value="daia-hub">Daia HUB</option>
+                    <option value="daia-calidad">Daia Calidad</option>
+                    <option value="daia-agent">Daia Agent</option>
+                    <option value="ambos">Varios productos</option>
+                    <option value="consultoria">Consultoría</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                  <p className="mt-2 text-sm text-gray-500">
+                    ¿Necesitas soporte técnico?{' '}
+                    <a
+                      href="https://clientes.daia.cl/soporte"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#0057B8] hover:underline font-medium"
+                    >
+                      Ingresa al portal de soporte →
+                    </a>
+                  </p>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Mensaje *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    disabled={status === 'loading'}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent disabled:opacity-50"
+                    placeholder="Cuéntanos sobre tu proyecto o consulta..."
+                  />
+                </div>
+
+                {status === 'error' && (
+                  <div className="flex items-center space-x-2 text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+                    <AlertCircle size={18} />
+                    <span className="text-sm">Ocurrió un error al enviar. Por favor intenta nuevamente o escríbenos directamente a info@daia.cl</span>
+                  </div>
+                )}
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full flex items-center justify-center space-x-2"
+                  disabled={status === 'loading'}
                 >
-                  <option value="">Selecciona una opción</option>
-                  <option value="daia-erp">Daia ERP</option>
-                  <option value="daia-hub">Daia HUB</option>
-                  <option value="ambos">Ambos productos</option>
-                  <option value="consultoria">Consultoría</option>
-                  <option value="soporte">Soporte técnico</option>
-                  <option value="otro">Otro</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Mensaje *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0057B8] focus:border-transparent"
-                  placeholder="Cuéntanos sobre tu proyecto o consulta..."
-                />
-              </div>
-
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full flex items-center justify-center space-x-2"
-              >
-                <Send size={20} />
-                <span>Enviar mensaje</span>
-              </Button>
-            </form>
+                  {status === 'loading' ? (
+                    <>
+                      <Loader2 size={20} className="animate-spin" />
+                      <span>Enviando...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send size={20} />
+                      <span>Enviar mensaje</span>
+                    </>
+                  )}
+                </Button>
+              </form>
+            )}
           </div>
 
           {/* Contact Information */}
@@ -217,7 +281,7 @@ export default function ContactoPage() {
               <h3 className="text-xl font-bold mb-4">Enlaces rápidos</h3>
               <div className="space-y-3">
                 <a
-                  href="https://help.daia.cl"
+                  href="https://ayuda.daia.cl"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-blue-200 hover:text-white transition-colors"
@@ -225,12 +289,12 @@ export default function ContactoPage() {
                   Centro de ayuda →
                 </a>
                 <a
-                  href="https://hub.daia.cl/auth"
+                  href="https://clientes.daia.cl/web/login"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-blue-200 hover:text-white transition-colors"
                 >
-                  Área de clientes →
+                  Portal de clientes →
                 </a>
                 <a
                   href="/productos"
@@ -263,5 +327,13 @@ export default function ContactoPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function ContactoPage() {
+  return (
+    <Suspense fallback={null}>
+      <ContactoForm />
+    </Suspense>
   )
 }

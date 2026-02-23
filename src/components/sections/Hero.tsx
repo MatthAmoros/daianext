@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react'
 import GradientButton from '@/components/ui/GradientButton'
 import { useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Hero() {
   const ref = useRef(null)
@@ -130,13 +131,15 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 items-center"
           >
-            <GradientButton size="lg" className="group whitespace-nowrap">
-              <ArrowRight
-                size={20}
-                className="group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0"
-              />
-              Nuestros productos
-            </GradientButton>
+            <Link href="/productos">
+              <GradientButton size="lg" className="group whitespace-nowrap">
+                <ArrowRight
+                  size={20}
+                  className="group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0"
+                />
+                Nuestros productos
+              </GradientButton>
+            </Link>
 
             {/* <GradientButton size="lg" className="group whitespace-nowrap">
               <Play size={20} className="group-hover:animate-pulse flex-shrink-0" />
@@ -152,15 +155,15 @@ export default function Hero() {
             className="mt-8 grid grid-cols-3 gap-12 max-w-2xl w-full"
           >
             <div className="text-center">
-              <div className="text-2xl font-bold text-[#0057B8]">7+</div>
+              <div className="text-3xl font-bold text-[#0057B8]">10+</div>
               <div className="text-sm text-gray-600">Clientes activos</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-[#0057B8]">40M+</div>
+              <div className="text-3xl font-bold text-[#0057B8]">40M+</div>
               <div className="text-sm text-gray-600">Kg procesados</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-[#0057B8]">100%</div>
+              <div className="text-3xl font-bold text-[#0057B8]">100%</div>
               <div className="text-sm text-gray-600">Tiempo real</div>
             </div>
           </motion.div>

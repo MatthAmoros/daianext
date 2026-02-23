@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, MessageCircle } from 'lucide-react'
 import Button from '@/components/ui/Button'
@@ -37,26 +38,34 @@ export default function CTA() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button
-              variant="secondary"
-              size="lg"
-              className="bg-white text-[#0057B8] hover:bg-blue-50 group"
-            >
-              Agendar demostración
-              <ArrowRight
-                size={20}
-                className="ml-2 group-hover:translate-x-1 transition-transform"
-              />
-            </Button>
+            <Link href="/contacto?interes=demostracion">
+              <Button
+                variant="secondary"
+                size="lg"
+                className="bg-white text-[#0057B8] hover:bg-blue-50 group"
+              >
+                Agendar demostración
+                <ArrowRight
+                  size={20}
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                />
+              </Button>
+            </Link>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-blue-200 text-white hover:bg-[#003865] group"
+            <a
+              href="https://wa.me/56227603491"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <MessageCircle size={20} className="mr-2" />
-              Conversar por WhatsApp
-            </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-blue-200 text-white hover:bg-[#003865] group"
+              >
+                <MessageCircle size={20} className="mr-2" />
+                Conversar por WhatsApp
+              </Button>
+            </a>
           </motion.div>
 
           <motion.div

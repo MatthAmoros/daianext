@@ -39,6 +39,18 @@ export const products: Product[] = [
     ],
     image: '/images/daia-calidad.png',
     demoUrl: 'https://calidad.daia.cl'
+  },
+  {
+    id: 'daia-agent',
+    name: 'Daia Agent',
+    description: 'Middleware que conecta tu ERP con las líneas de empaquetado y calibración mediante APIs genéricas. Elimina ingresos manuales y garantiza trazabilidad total en tiempo real.',
+    features: [
+      'Integración con clasificadores Tomra, Unitec y Aweta',
+      'Control de salidas PLC en tiempo real',
+      'Sistema de etiquetado automático ZPL',
+      'Gestión de paletizado y trazabilidad'
+    ],
+    image: '/daiaagent/operador_con_datos.png'
   }
 ]
 
@@ -50,7 +62,10 @@ export const clients: Client[] = [
   { id: 'naturesouth', name: 'Nature South', logo: '/clientes/naturesouth.png' },
   { id: 'provagro', name: 'Provagro', logo: '/clientes/provagro.png' },
   { id: 'huelpack', name: 'Huelpack', logo: '/clientes/huelpack.png' },
-  { id: 'provex', name: 'Provex', logo: '/clientes/provex.png' }
+  { id: 'provex', name: 'Provex', logo: '/clientes/provex.png' },
+  // { id: 'westfalia', name: 'Westfalia', logo: '/clientes/westfalia.svg' },
+  { id: 'pps', name: 'PPS', logo: '/clientes/pps.png' },
+  { id: 'prize', name: 'Prize', logo: '/clientes/Prize.jpg' }
 ]
 
 export const values: Value[] = [
@@ -88,8 +103,7 @@ export const navigation = {
       href: '/empresa',
       submenu: [
         { name: 'Sobre nosotros', href: '/empresa#about' },
-        { name: 'Nuestros valores', href: '/empresa#values' },
-        { name: 'Business Intelligence', href: '/empresa#bi' }
+        { name: 'Nuestros valores', href: '/empresa#values' }
       ]
     },
     {
@@ -98,7 +112,8 @@ export const navigation = {
       submenu: [
         { name: 'Daia ERP', href: '/productos/daia-erp' },
         { name: 'Daia HUB', href: '/productos/daia-hub' },
-        { name: 'Daia Calidad', href: '/productos/daia-calidad' }
+        { name: 'Daia Calidad', href: '/productos/daia-calidad' },
+        { name: 'Daia Agent', href: '/productos/daia-agent' }
       ]
     },
     { name: 'Clientes', href: '/clientes' },

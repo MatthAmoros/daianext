@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { clients } from '@/data/content'
 import Button from '@/components/ui/Button'
 
@@ -9,30 +10,9 @@ export const metadata: Metadata = {
 }
 
 export default function ClientesPage() {
-  const testimonials = [
-    {
-      company: 'Andinexia',
-      quote: 'Daia ERP ha transformado completamente nuestra gestión de inventarios y trazabilidad. Hemos reducido los errores en un 90% y mejorado significativamente nuestros tiempos de respuesta.',
-      author: 'Gerente de Operaciones',
-      industry: 'Producción y Exportación de Cerezas'
-    },
-    {
-      company: 'Roquefort',
-      quote: 'La implementación de Daia HUB nos permitió centralizar toda nuestra operación logística. Ahora tenemos visibilidad completa de nuestros embarques y hemos optimizado nuestros costos.',
-      author: 'Director Comercial',
-      industry: 'Exportación de Frutas'
-    },
-    {
-      company: 'Meena Farms',
-      quote: 'El soporte técnico y la facilidad de uso de las plataformas de Daia Systems nos ha permitido capacitar rápidamente a nuestro equipo y ver resultados inmediatos.',
-      author: 'Jefe de Sistemas',
-      industry: 'Agricultura y Packing'
-    }
-  ]
-
   const stats = [
-    { number: '50+', label: 'Empresas Clientes' },
-    { number: '1M+', label: 'Toneladas Procesadas' },
+    { number: '10+', label: 'Empresas Clientes' },
+    { number: '40M+', label: 'Toneladas Procesadas' },
     { number: '99.9%', label: 'Uptime del Sistema' }
   ]
 
@@ -85,33 +65,13 @@ export default function ClientesPage() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Lo que dicen nuestros clientes
-          </h2>
-          <div className="grid lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg">
-                <div className="text-4xl text-[#0057B8] mb-4">&ldquo;</div>
-                <p className="text-gray-700 mb-6 italic">{testimonial.quote}</p>
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.company}</div>
-                  <div className="text-sm text-gray-600">{testimonial.author}</div>
-                  <div className="text-sm text-gray-500">{testimonial.industry}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Industries Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">
             Industrias que atendemos
           </h2>
           <p className="text-lg text-gray-600 text-center max-w-4xl mx-auto mb-12">
-            Nuestro foco principal está en <strong>cerezas, manzanas, ciruelas y peras</strong>, donde Daia ERP ha sido especialmente diseñado y optimizado para gestionar los desafíos únicos de estos cultivos. También hemos trabajado exitosamente con uvas, cítricos y paltas, logrando resultados excepcionales en la gestión y trazabilidad de cada especie.
+            Nuestro foco principal está en <strong>cerezas, manzanas, ciruelas y uvas</strong>, donde Daia ERP ha sido especialmente diseñado y optimizado para gestionar los desafíos únicos de estos cultivos. También hemos trabajado exitosamente con peras, cítricos y paltas, logrando resultados excepcionales en la gestión y trazabilidad de cada especie.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
             <div className="text-center p-6 bg-white rounded-xl shadow-lg">
@@ -183,12 +143,11 @@ export default function ClientesPage() {
             Únete a las empresas líderes que ya están transformando sus operaciones con Daia Systems.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="white" size="lg">
-              Solicitar demo personalizada
-            </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#0057B8]">
-              Hablar con ventas
-            </Button>
+            <Link href="/contacto?interes=demostracion">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#0057B8]">
+                Solicitar demo personalizada
+              </Button>
+            </Link>
           </div>
         </section>
       </div>
