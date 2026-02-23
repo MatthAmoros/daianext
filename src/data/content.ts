@@ -65,7 +65,7 @@ export const clients: Client[] = [
   { id: 'provex', name: 'Provex', logo: '/clientes/provex.png' },
   // { id: 'westfalia', name: 'Westfalia', logo: '/clientes/westfalia.svg' },
   { id: 'pps', name: 'PPS', logo: '/clientes/pps.png' },
-  { id: 'prize', name: 'Prize', logo: '/clientes/Prize.jpg' }
+  { id: 'prize', name: 'Prize', logo: '/clientes/prize.jpg' }
 ]
 
 export const values: Value[] = [
