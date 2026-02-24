@@ -94,7 +94,7 @@ export default function Hero() {
           >
             <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-[#0057B8]/10 to-[#003865]/10 p-2 pb-2">
               <Image
-                src="/daiareactui.png"
+                src="/homeprincipal.png"
                 alt="Daia Systems UI"
                 width={1920}
                 height={1080}
