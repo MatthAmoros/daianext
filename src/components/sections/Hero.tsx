@@ -6,6 +6,7 @@ import GradientButton from '@/components/ui/GradientButton'
 import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import InteractiveDashboard from '@/components/sections/InteractiveDashboard'
 
 export default function Hero() {
   const ref = useRef(null)
@@ -92,16 +93,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative w-full max-w-7xl py-8"
           >
-            <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-[#0057B8]/10 to-[#003865]/10 p-2 pb-2">
-              <Image
-                src="/homeprincipal.png"
-                alt="Daia Systems UI"
-                width={1920}
-                height={1080}
-                className="w-full h-auto rounded-xl shadow-lg object-cover"
-                priority
-                quality={85}
-              />
+            <div className="relative rounded-2xl bg-gradient-to-br from-[#0057B8]/10 to-[#003865]/10 p-2 pb-2">
+              <InteractiveDashboard />
             </div>
           </motion.div>
 
