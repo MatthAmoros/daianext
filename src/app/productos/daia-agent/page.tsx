@@ -6,13 +6,13 @@ import Button from '@/components/ui/Button'
 import ScreenshotGallery from '@/components/ui/ScreenshotGallery'
 
 export const metadata: Metadata = {
-  title: 'Daia Agent - Middleware para líneas de producción agroindustrial | Daia Systems',
-  description: 'Daia Agent es un middleware que conecta ERPs y líneas de producción agroindustrial mediante APIs genéricas. Integración con clasificadores Tomra, Unitec y Aweta, control PLC y etiquetado automático.',
+  title: 'Daia Agent - Intermediario para líneas de producción agroindustrial | Daia Systems',
+  description: 'Daia Agent es un intermediario que conecta ERPs y líneas de producción agroindustrial mediante APIs genéricas. Integración con clasificadores Tomra, Unitec y Aweta, control PLC y etiquetado automático.',
 }
 
 export default function DaiaAgentPage() {
   const features = [
-    'Middleware independiente del ERP de destino',
+    'Intermediario independiente del ERP de destino',
     'Integración con clasificadores Tomra, Unitec y Aweta',
     'Control de salidas PLC en tiempo real (Modbus TCP)',
     'Sistema de etiquetado automático ZPL (Zebra, Honeywell)',

@@ -43,7 +43,7 @@ export const products: Product[] = [
   {
     id: 'daia-agent',
     name: 'Daia Agent',
-    description: 'Middleware que conecta tu ERP con las líneas de empaquetado y calibración mediante APIs genéricas. Elimina ingresos manuales y garantiza trazabilidad total en tiempo real.',
+    description: 'Intermediario que conecta tu ERP con las líneas de empaquetado y calibración mediante APIs genéricas. Elimina ingresos manuales y garantiza trazabilidad total en tiempo real.',
     features: [
       'Integración con clasificadores Tomra, Unitec y Aweta',
       'Control de salidas PLC en tiempo real',
