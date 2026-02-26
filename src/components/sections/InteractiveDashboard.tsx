@@ -27,7 +27,8 @@ const modules: Module[] = [
     description: 'Gestión integral de materias primas, insumos y suministros para el proceso productivo frutícola.',
     features: [
       'Control de stock en tiempo real',
-      'Alertas de reposición automática',
+      'Definición de stock crítico',
+      'Configuración de standard de embalaje',
       'Trazabilidad completa por lote',
     ],
   },

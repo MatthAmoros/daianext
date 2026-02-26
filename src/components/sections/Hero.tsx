@@ -108,7 +108,7 @@ export default function Hero() {
             Sistemas que se integran para obtener la trazabilidad completa de la fruta, desde la
             {' '}<strong className="text-black">recepción</strong>{' '} en la planta,
             hasta su {' '}<strong className="text-black">exportación</strong>.{' '}
-            ERP, HUB, agente para líneas de proceso, integraciones con otros sistemas, integración con maquinaria, sensores de temperatura y más.
+            ERP, HUB, AGENTE para líneas de proceso, integraciones con otros sistemas, integración con maquinaria, sensores de temperatura y más.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -152,7 +152,7 @@ export default function Hero() {
               <div className="text-sm text-gray-600">Clientes activos</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#0057B8]">40M+</div>
+              <div className="text-3xl font-bold text-[#0057B8]">1000M+</div>
               <div className="text-sm text-gray-600">Kg procesados</div>
             </div>
             <div className="text-center">
