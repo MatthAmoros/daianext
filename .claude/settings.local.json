@@ -10,7 +10,11 @@
       "WebSearch",
       "Bash(npm run build:*)",
       "Bash(git commit:*)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(git add:*)",
+      "Bash(npx tsc:*)",
+      "WebFetch(domain:daia2.vercel.app)",
+      "Bash(ls \"c:/Users/Pipe/Proyectos/Daia Systems/daianext/\"*.md)"
     ],
     "deny": [],
     "ask": []
