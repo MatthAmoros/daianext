@@ -281,7 +281,7 @@ export default function InteractiveDashboard() {
       <div className="overflow-hidden rounded-xl" onClick={() => setActiveModule(null)}>
 
         {/* Top navbar */}
-        <div className="bg-[#003865] px-6 py-2.5 flex items-center justify-between">
+        <div className="bg-[#0057B8] px-6 py-2.5 flex items-center justify-between">
           <Image
             src="/iconoblancodaia.png"
             alt="Daia"
