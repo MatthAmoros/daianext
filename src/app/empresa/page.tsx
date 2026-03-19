@@ -26,26 +26,17 @@ export default function EmpresaPage() {
         </section>
 
         {/* About Section */}
-        <section className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Nuestra empresa</h2>
-            <div className="space-y-6 text-gray-700 text-lg">
-              <p>
-                Gracias a nuestra <strong>experiencia en este rubro</strong>, creamos herramientas digitales
-                para modernizar y agilizar la gestión de los sitios de producción.
-              </p>
-              <p>
-                Nuestra finalidad es ayudarles a manejar las diferentes facetas de sus negocios mediante{' '}
-                <strong>herramientas flexibles y fácil de utilizar</strong>, entregándole informaciones claves
-                para acompañarle en su toma de decisión y lograr sus objetivos.
-              </p>
-            </div>
-          </div>
-          <div className="bg-gradient-to-br from-[#0057B8] to-[#003865] rounded-xl p-12 text-white">
-            <h3 className="text-2xl font-bold mb-4">Sistemas de información como ventaja competitiva</h3>
-            <p className="text-lg opacity-90">
-              Los sistemas de información son una parte clave de los procesos productivos de cada empresa.
-              El buen diseño de estos, tal como su correcto manejo, es esencial a su éxito.
+        <section className="max-w-4xl mx-auto mb-20">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Nuestra empresa</h2>
+          <div className="space-y-6 text-gray-700 text-lg">
+            <p>
+              Gracias a nuestra <strong>experiencia en este rubro</strong>, creamos herramientas digitales
+              para modernizar y agilizar la gestión de los sitios de producción.
+            </p>
+            <p>
+              Nuestra finalidad es ayudarles a manejar las diferentes facetas de sus negocios mediante{' '}
+              <strong>herramientas flexibles y fácil de utilizar</strong>, entregándole informaciones claves
+              para acompañarle en su toma de decisión y lograr sus objetivos.
             </p>
           </div>
         </section>
