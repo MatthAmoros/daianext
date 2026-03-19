@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     id: 'daia-erp',
     name: 'Daia ERP',
-    description: 'Sistema integral de gestión frutícola que controla toda tu cadena de producción y exportación.',
+    description: 'Gestión integral para planta de proceso de fruta fresca. El corazón de la gestión empresarial frutícola.',
     features: [
       'Gestión integral desde recepción hasta exportación',
       'Control de inventarios optimizado',
@@ -45,12 +45,24 @@ export const products: Product[] = [
     name: 'Daia Agent',
     description: 'Intermediario que conecta tu ERP con las líneas de empaquetado y calibración mediante APIs genéricas. Elimina ingresos manuales y garantiza trazabilidad total en tiempo real.',
     features: [
-      'Integración con clasificadores Tomra, Unitec y Aweta',
+      'Integración con clasificadores Tomra, MAF, Unitec y Aweta',
       'Control de salidas PLC en tiempo real',
       'Sistema de etiquetado automático ZPL',
       'Gestión de paletizado y trazabilidad'
     ],
     image: '/daiaagent/operador_con_datos.png'
+  },
+  {
+    id: 'daia-instruments',
+    name: 'Daia Instruments',
+    description: 'Solución IoT para monitorear tu cadena de frío con sensores inalámbricos y alarmas oportunas por WhatsApp.',
+    features: [
+      'Sensores inalámbricos de temperatura',
+      'Alarmas automáticas por WhatsApp',
+      'Plataforma cloud siempre disponible',
+      'Trazabilidad de folios por cámara'
+    ],
+    image: '/images/daia-instruments.png'
   }
 ]
 
@@ -113,7 +125,8 @@ export const navigation = {
         { name: 'Daia ERP', href: '/productos/daia-erp' },
         { name: 'Daia HUB', href: '/productos/daia-hub' },
         { name: 'Daia Calidad', href: '/productos/daia-calidad' },
-        { name: 'Daia Agent', href: '/productos/daia-agent' }
+        { name: 'Daia Agent', href: '/productos/daia-agent' },
+        { name: 'Daia Instruments', href: '/productos/daia-instruments' }
       ]
     },
     { name: 'Clientes', href: '/clientes' },

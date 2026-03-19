@@ -15,45 +15,37 @@ export default function EmpresaPage() {
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Sobre Daia Systems
           </h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-12">
-            Somos una empresa chilena especializada en el desarrollo de software para la industria frutícola.
-            Nuestro objetivo es simplificar y optimizar los procesos productivos y logísticos mediante
-            tecnología de vanguardia.
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-6">
+            Daia Systems SpA se creó para responder a las necesidades tecnológicas específicas de las plantas frutícolas.
+            Estamos convencidos que hoy en día, los sistemas de información son una parte clave de los procesos productivos
+            de cada empresa y el buen diseño de estos, tal como su correcto manejo es esencial a su éxito.
+          </p>
+          <p className="text-xl italic text-[#0057B8] font-medium max-w-2xl mx-auto">
+            &ldquo;Simplemente, eficiente&rdquo;
           </p>
         </section>
 
         {/* About Section */}
         <section className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Nuestra Historia</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Nuestra empresa</h2>
             <div className="space-y-6 text-gray-700 text-lg">
               <p>
-                Desde nuestros inicios, hemos estado comprometidos con transformar la industria frutícola
-                a través de la innovación tecnológica. Nacimos de la necesidad de crear soluciones
-                específicas para los desafíos únicos que enfrenta este sector.
+                Gracias a nuestra <strong>experiencia en este rubro</strong>, creamos herramientas digitales
+                para modernizar y agilizar la gestión de los sitios de producción.
               </p>
               <p>
-                Con años de experiencia trabajando directamente con productores y exportadores,
-                hemos desarrollado un profundo entendimiento de los procesos, desde la recepción
-                de fruta hasta la exportación final.
-              </p>
-              <p>
-                Hoy, nuestros productos son utilizados por empresas líderes en la industria,
-                ayudándoles a optimizar sus operaciones y maximizar su rentabilidad.
+                Nuestra finalidad es ayudarles a manejar las diferentes facetas de sus negocios mediante{' '}
+                <strong>herramientas flexibles y fácil de utilizar</strong>, entregándole informaciones claves
+                para acompañarle en su toma de decisión y lograr sus objetivos.
               </p>
             </div>
           </div>
           <div className="bg-gradient-to-br from-[#0057B8] to-[#003865] rounded-xl p-12 text-white">
-            <h3 className="text-2xl font-bold mb-6">Nuestra Misión</h3>
-            <p className="text-lg mb-8 opacity-90">
-              Empoderar a la industria frutícola chilena con tecnología de clase mundial,
-              simplificando procesos complejos y proporcionando herramientas que impulsen
-              la eficiencia y el crecimiento sostenible.
-            </p>
-            <h3 className="text-2xl font-bold mb-6">Nuestra Visión</h3>
+            <h3 className="text-2xl font-bold mb-4">Sistemas de información como ventaja competitiva</h3>
             <p className="text-lg opacity-90">
-              Ser la plataforma tecnológica líder en Latinoamérica para la gestión integral
-              de la cadena de valor frutícola, desde el campo hasta el consumidor final.
+              Los sistemas de información son una parte clave de los procesos productivos de cada empresa.
+              El buen diseño de estos, tal como su correcto manejo, es esencial a su éxito.
             </p>
           </div>
         </section>

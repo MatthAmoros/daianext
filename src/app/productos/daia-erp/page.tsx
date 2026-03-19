@@ -5,42 +5,42 @@ import { ArrowLeft, CheckCircle } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
-  title: 'Daia ERP - Sistema integral de gestión frutícola | Daia Systems',
-  description: 'Sistema integral de gestión frutícola que controla toda tu cadena de producción y exportación. Optimiza inventarios, reportes en tiempo real e interfaz intuitiva.',
+  title: 'Daia ERP - Gestión integral para planta de proceso | Daia Systems',
+  description: 'Gestión integral para planta de proceso de fruta fresca. Trazabilidad desde recepción hasta despacho, control de materiales, etiquetado y más.',
 }
 
 export default function DaiaERPPage() {
   const features = [
-    'Gestión integral desde recepción hasta exportación',
-    'Control de inventarios optimizado',
-    'Interfaz intuitiva y moderna',
-    'Reportes en tiempo real',
-    'Trazabilidad completa del producto',
-    'Gestión de calidad integrada',
-    'Control de costos por lote',
-    'Integración con sistemas contables'
+    'Trazabilidad desde recepción en campo hasta despacho',
+    'Gestión de materiales con inventario valorizado (FIFO, PMP)',
+    'Módulo de calidad con muestreo en recepción y despacho',
+    'Etiquetado compatible con Zebra, Bixolon y Datamax',
+    'Panel Piloto para supervisión de línea en tiempo real',
+    'Gestión de envases y canastillas por productor y campo',
+    'Módulo de mantenimiento preventivo y correctivo',
+    'Integración con SAP B1, Softland, Odoo, Tomra, Aweta, Unitec'
   ]
 
   const benefits = [
     {
-      title: 'Optimización de procesos',
-      description: 'Automatiza y optimiza todos los procesos de tu cadena productiva, reduciendo tiempos y costos operacionales.'
+      title: 'Trazabilidad total',
+      description: 'Llevamos la trazabilidad de tus productos partiendo por su recepción desde el campo hasta su despacho. Siempre tendrás información segura y no alterable.'
     },
     {
-      title: 'Control total',
-      description: 'Mantén el control completo desde la recepción de fruta hasta la exportación final con trazabilidad completa.'
+      title: 'Plataforma centralizada',
+      description: 'Nuestra plataforma centraliza los datos de todos tus procesos con una interfaz simple y amigable para un acceso sencillo.'
     },
     {
-      title: 'Decisiones informadas',
-      description: 'Accede a reportes y dashboards en tiempo real para tomar decisiones basadas en datos precisos.'
+      title: 'Reportes personalizables',
+      description: 'Diseñamos reportes personalizables y actualizables para presentar tus propios indicadores y tomar decisiones basadas en datos.'
     },
     {
-      title: 'Cumplimiento normativo',
-      description: 'Cumple con todas las normativas y estándares de calidad requeridos para la exportación.'
+      title: 'Gestión de materiales integrada',
+      description: 'Una gestión de materiales vinculada con tu producción, para automatizar rebajas masivas por consumo con reportes exportables para integración contable.'
     },
     {
-      title: 'Business Intelligence',
-      description: 'Dashboards interactivos, reportes personalizables y análisis predictivo para transformar tus datos en decisiones estratégicas.'
+      title: 'Integración con tu ecosistema',
+      description: 'Interfaces de automatización compatibles con los líderes del mercado: Tomra, Aweta, Unitec, SAP B1, Softland, HubCrop, Odoo y más.'
     }
   ]
 
@@ -72,7 +72,7 @@ export default function DaiaERPPage() {
               Daia ERP
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Sistema integral de gestión frutícola que controla toda tu cadena de producción y exportación.
+              Gestión integral para planta de proceso de fruta fresca. El corazón de la gestión empresarial frutícola.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contacto?interes=daia-erp">

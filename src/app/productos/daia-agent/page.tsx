@@ -7,13 +7,13 @@ import ScreenshotGallery from '@/components/ui/ScreenshotGallery'
 
 export const metadata: Metadata = {
   title: 'Daia Agent - Intermediario para líneas de producción agroindustrial | Daia Systems',
-  description: 'Daia Agent es un intermediario que conecta ERPs y líneas de producción agroindustrial mediante APIs genéricas. Integración con clasificadores Tomra, Unitec y Aweta, control PLC y etiquetado automático.',
+  description: 'Daia Agent es un middleware que conecta ERPs y líneas de producción agroindustrial mediante APIs genéricas. Integración con clasificadores Tomra, MAF, Unitec y Aweta, control PLC y etiquetado automático.',
 }
 
 export default function DaiaAgentPage() {
   const features = [
     'Intermediario independiente del ERP de destino',
-    'Integración con clasificadores Tomra, Unitec y Aweta',
+    'Integración con clasificadores Tomra, MAF, Unitec y Aweta',
     'Control de salidas PLC en tiempo real (Modbus TCP)',
     'Sistema de etiquetado automático ZPL (Zebra, Honeywell)',
     'Gestión de paletizado y trazabilidad completa',
@@ -229,7 +229,7 @@ export default function DaiaAgentPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">Integraciones compatibles</h2>
           <p className="text-gray-600 text-center mb-8">Daia Agent se conecta con los equipos y sistemas más utilizados en la industria frutícola</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {['Tomra Sizer', 'Unitec', 'Aweta', 'Zebra / Honeywell', 'SAP Business One', 'Odoo', 'MS Dynamics', 'PLCs Modbus'].map((item, index) => (
+            {['Tomra Sizer', 'MAF', 'Unitec', 'Aweta', 'Zebra / Honeywell', 'SAP Business One', 'Odoo', 'PLCs Modbus'].map((item, index) => (
               <div key={index} className="p-4 bg-blue-50 rounded-lg">
                 <span className="text-sm font-medium text-[#0057B8]">{item}</span>
               </div>
