@@ -51,7 +51,9 @@ export default function Products() {
                               ? '/daiahub.png'
                               : product.id === 'daia-agent'
                               ? '/daiaagent/operador_con_datos.png'
-                              : '/daiacalidad.png'
+                              : product.id === 'daia-calidad'
+                              ? '/daiacalidad.png'
+                              : product.image ?? '/daiacalidad.png'
                           }
                           alt={`${product.name} Screenshot`}
                           width={500}
