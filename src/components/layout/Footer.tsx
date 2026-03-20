@@ -86,6 +86,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/productos/daia-instruments" className="text-gray-400 hover:text-white transition-colors">
+                  Daia Instruments
+                </Link>
+              </li>
+              <li>
                 <a href="https://centinela.daia.cl" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   Centinela
                 </a>
