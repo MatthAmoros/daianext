@@ -11,10 +11,6 @@ export const metadata: Metadata = {
 
 export default function DaiaHubPage() {
   const features = [
-    'Centralización logística completa',
-    'Comunicación transparente entre equipos',
-    'Optimización financiera avanzada',
-    'Gestión documental automatizada',
     'Seguimiento en tiempo real de embarques',
     'Portal de clientes integrado',
     'Reportes de rentabilidad por embarque',

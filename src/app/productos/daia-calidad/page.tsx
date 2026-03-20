@@ -11,10 +11,6 @@ export const metadata: Metadata = {
 
 export default function DaiaCalidadPage() {
   const features = [
-    'Control de procesos de calidad',
-    'Gestión de certificaciones',
-    'Cumplimiento normativo automatizado',
-    'Auditorías y reportes',
     'Trazabilidad de calidad',
     'Control de puntos críticos',
     'Gestión de no conformidades',

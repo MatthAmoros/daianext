@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, CheckCircle } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import ScreenshotGallery from '@/components/ui/ScreenshotGallery'
 
@@ -10,19 +10,6 @@ export const metadata: Metadata = {
 }
 
 export default function DaiaInstrumentsPage() {
-  const features = [
-    'Monitoreo de temperatura con sensores inalámbricos',
-    'Alarmas y reportes automáticos por WhatsApp',
-    'Plataforma cloud siempre disponible',
-    'Instalación rápida sin cableado invasivo',
-    'Tablero central con todos los sensores en tiempo real',
-    'Definición de umbrales y contacto de emergencia por dispositivo',
-    'Gráficos históricos y exportación a CSV',
-    'Trazabilidad de folios por cámara',
-    'Perfiles de usuario con niveles de acceso',
-    'Acceso desde computador o celular'
-  ]
-
   const differentials = [
     {
       icon: '⚡',
@@ -163,19 +150,6 @@ export default function DaiaInstrumentsPage() {
                 <li>• Ingreso de folios desde dispositivos móviles de forma sencilla</li>
               </ul>
             </div>
-          </div>
-        </section>
-
-        {/* Features checklist */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Características principales</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-start space-x-3 p-5 bg-white rounded-lg shadow-sm border">
-                <CheckCircle className="text-[#0057B8] mt-0.5 flex-shrink-0" size={20} />
-                <span className="text-gray-700">{feature}</span>
-              </div>
-            ))}
           </div>
         </section>
 
