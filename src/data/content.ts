@@ -62,7 +62,7 @@ export const products: Product[] = [
       'Plataforma cloud siempre disponible',
       'Trazabilidad de folios por cámara'
     ],
-    image: '/images/daia-instruments.png'
+    image: '/daiainstruments/Imagen2.png'
   }
 ]
 

@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, CheckCircle } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import ScreenshotGallery from '@/components/ui/ScreenshotGallery'
 
 export const metadata: Metadata = {
   title: 'Daia Instruments - Termometría con alarmas en tiempo real | Daia Systems',
@@ -176,6 +177,44 @@ export default function DaiaInstrumentsPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Screenshot Gallery */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">La plataforma en acción</h2>
+          <p className="text-gray-600 mb-8">Capturas reales de Daia Instruments. Haz clic en cada imagen para ampliarla.</p>
+          <ScreenshotGallery screenshots={[
+            {
+              src: '/daiainstruments/Imagen1.png',
+              alt: 'Pantalla de acceso a Daia Instruments',
+              caption: 'Acceso controlado',
+              desc: 'Plataforma profesional con login seguro y perfiles de usuario.'
+            },
+            {
+              src: '/daiainstruments/Imagen2.png',
+              alt: 'Tablero central con todos los sensores',
+              caption: 'Tablero central',
+              desc: 'Vista en tiempo real de todos los sensores conectados con exportación a CSV.'
+            },
+            {
+              src: '/daiainstruments/Imagen3.png',
+              alt: 'Configuración de sensor con umbrales y folios',
+              caption: 'Configuración sencilla',
+              desc: 'Umbrales de alarma, contactos de alerta por WhatsApp y gestión de folios por dispositivo.'
+            },
+            {
+              src: '/daiainstruments/Imagen4.png',
+              alt: 'Gráfico histórico de temperatura',
+              caption: 'Gráficos y datos exportables',
+              desc: 'Histórico de temperatura con umbrales a la vista para detectar anomalías.'
+            },
+            {
+              src: '/daiainstruments/Imagen5.png',
+              alt: 'Trazabilidad de folios',
+              caption: 'Trazabilidad de folios',
+              desc: 'Historial de entrada y salida por folio con estado actual en cada cámara o túnel.'
+            }
+          ]} />
         </section>
 
         {/* CTA Section */}
