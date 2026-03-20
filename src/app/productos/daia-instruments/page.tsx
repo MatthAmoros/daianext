@@ -4,8 +4,8 @@ import { ArrowLeft, CheckCircle } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
-  title: 'Daia Instruments - IoT para la agroindustria | Daia Systems',
-  description: 'Solución IoT para monitorear tu cadena de frío y enviar alarmas oportunas. Sensores inalámbricos, alertas por WhatsApp, plataforma cloud y trazabilidad de folios para la agroindustria.',
+  title: 'Daia Instruments - Termometría con alarmas en tiempo real | Daia Systems',
+  description: 'Plataforma IoT de monitoreo de temperatura con sensores inalámbricos para la agroindustria. Alarmas por WhatsApp, trazabilidad de folios, gráficos exportables y perfiles de usuario.',
 }
 
 export default function DaiaInstrumentsPage() {
@@ -15,45 +15,28 @@ export default function DaiaInstrumentsPage() {
     'Plataforma cloud siempre disponible',
     'Instalación rápida sin cableado invasivo',
     'Tablero central con todos los sensores en tiempo real',
-    'Definición de umbrales y contactos de emergencia',
+    'Definición de umbrales y contacto de emergencia por dispositivo',
     'Gráficos históricos y exportación a CSV',
-    'Trazabilidad de folios por cámara'
-  ]
-
-  const benefits = [
-    {
-      title: 'Instalación rápida y de bajo costo',
-      description: 'Sin necesidad de cableado ni instalaciones invasivas. Nuestros sensores inalámbricos se instalan en minutos y se conectan de forma inmediata a la plataforma.'
-    },
-    {
-      title: 'Alarmas inteligentes por WhatsApp',
-      description: 'Recibe alertas en tiempo real directamente en tu teléfono cuando los valores superen los umbrales definidos. Sin apps adicionales, solo WhatsApp.'
-    },
-    {
-      title: 'Plataforma cloud siempre disponible',
-      description: 'Accede a todos tus sensores desde cualquier dispositivo, en cualquier momento. Una plataforma profesional disponible desde tu computador o celular.'
-    },
-    {
-      title: 'Control de cadena de frío',
-      description: 'Complementa y potencia los sistemas existentes de termometría con funcionalidades avanzadas: umbrales, contactos de emergencia y gestión de recursos críticos.'
-    }
+    'Trazabilidad de folios por cámara',
+    'Perfiles de usuario con niveles de acceso',
+    'Acceso desde computador o celular'
   ]
 
   const differentials = [
     {
       icon: '⚡',
       title: 'Instalación rápida y de bajo costo',
-      description: 'Sensores inalámbricos listos para usar sin obras ni cableado.'
+      description: 'Sin necesidad de cableado ni instalaciones invasivas. Nuestros sensores inalámbricos se instalan en minutos y se conectan de forma inmediata a la plataforma.'
     },
     {
       icon: '💬',
       title: 'Alarmas y reportes por WhatsApp',
-      description: 'Notificaciones automáticas al instante en el canal que ya usas.'
+      description: 'Recibe alertas en tiempo real directamente en tu teléfono cuando los valores superen los umbrales definidos. Sin apps adicionales, solo WhatsApp.'
     },
     {
       icon: '☁️',
       title: 'Una plataforma cloud siempre disponible',
-      description: 'Acceso 24/7 desde cualquier dispositivo conectado a internet.'
+      description: 'Accede a todos tus sensores desde cualquier dispositivo, en cualquier momento. Una plataforma profesional disponible desde tu computador o celular.'
     }
   ]
 
@@ -81,11 +64,15 @@ export default function DaiaInstrumentsPage() {
         {/* Hero Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
               Daia Instruments
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              IoT para la agroindustria. Monitorea tu cadena de frío con sensores inalámbricos y recibe alarmas oportunas.
+            <p className="text-xl text-[#0057B8] font-medium mb-6">
+              Termometría con alarmas en tiempo real
+            </p>
+            <p className="text-lg text-gray-600 mb-8">
+              Plataforma de monitoreo IoT con sensores inalámbricos, diseñada específicamente
+              para las necesidades de la agroindustria.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contacto?interes=daia-instruments">
@@ -97,14 +84,21 @@ export default function DaiaInstrumentsPage() {
           </div>
           <div className="bg-gradient-to-br from-[#0057B8] to-[#003865] rounded-xl p-10 text-white">
             <h2 className="text-2xl font-bold mb-4">¿Por qué Daia Instruments?</h2>
-            <p className="text-lg opacity-90 mb-4">
-              Daia Instruments nace para complementar y potenciar la oferta actual del mercado en
-              soluciones IoT aplicadas al control de temperatura y recursos estratégicos.
-            </p>
-            <p className="text-lg opacity-90">
-              Ponemos a disposición de nuestros clientes una plataforma de monitoreo con sensores
-              inalámbricos, fácil de usar y diseñada específicamente para las necesidades de la agroindustria.
-            </p>
+            <div className="space-y-4 text-lg opacity-90">
+              <p>
+                Daia Instruments nace para complementar y potenciar la oferta actual del mercado en
+                soluciones IoT aplicadas al control de temperatura y recursos estratégicos.
+              </p>
+              <p>
+                Ponemos a disposición de nuestros clientes una plataforma de monitoreo con sensores
+                inalámbricos, fácil de usar y diseñada específicamente para las necesidades de la agroindustria.
+              </p>
+              <p>
+                Sin necesidad de cableado ni instalaciones invasivas, nuestra solución permite integrar
+                alarmas inteligentes, automatizar controles y sumar funcionalidades avanzadas a sistemas
+                existentes de termometría y gestión de recursos críticos.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -117,32 +111,6 @@ export default function DaiaInstrumentsPage() {
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Características principales</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-start space-x-3 p-6 bg-white rounded-lg shadow-sm border">
-                <CheckCircle className="text-[#0057B8] mt-1 flex-shrink-0" size={20} />
-                <span className="text-gray-700">{feature}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Beneficios para tu operación</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="p-8 bg-white rounded-lg shadow-sm border">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -162,11 +130,19 @@ export default function DaiaInstrumentsPage() {
               </ul>
             </div>
             <div className="p-8 bg-white rounded-lg shadow-sm border">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">🔐 Acceso controlado</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Diferentes perfiles de usuarios para manejar niveles de acceso</li>
+                <li>• Plataforma profesional disponible desde computador o celular</li>
+                <li>• Gestión segura de usuarios y permisos</li>
+              </ul>
+            </div>
+            <div className="p-8 bg-white rounded-lg shadow-sm border">
               <h3 className="text-xl font-bold text-gray-900 mb-4">⚙️ Configuración sencilla</h3>
               <ul className="space-y-2 text-gray-600">
                 <li>• Nombre personalizado para cada sensor</li>
                 <li>• Valor actual en vivo</li>
-                <li>• Configuración de umbrales y contactos</li>
+                <li>• Configuración de umbrales y contactos de alerta</li>
                 <li>• Gestión de los folios almacenados</li>
               </ul>
             </div>
@@ -178,14 +154,27 @@ export default function DaiaInstrumentsPage() {
                 <li>• Histórico de temperatura exportable</li>
               </ul>
             </div>
-            <div className="p-8 bg-white rounded-lg shadow-sm border">
+            <div className="p-8 bg-white rounded-lg shadow-sm border md:col-span-2">
               <h3 className="text-xl font-bold text-gray-900 mb-4">📦 Trazabilidad de folios</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• Busca folios y revisa horarios de entrada y salida</li>
-                <li>• Seguimiento de cuántas veces fue ingresado y dónde está</li>
-                <li>• Ingreso de folios desde dispositivos móviles</li>
+                <li>• Busca folios y revisa los horarios de entrada y salida</li>
+                <li>• Seguimiento de cuántas veces fue ingresado y dónde está actualmente</li>
+                <li>• Ingreso de folios desde dispositivos móviles de forma sencilla</li>
               </ul>
             </div>
+          </div>
+        </section>
+
+        {/* Features checklist */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Características principales</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {features.map((feature, index) => (
+              <div key={index} className="flex items-start space-x-3 p-5 bg-white rounded-lg shadow-sm border">
+                <CheckCircle className="text-[#0057B8] mt-0.5 flex-shrink-0" size={20} />
+                <span className="text-gray-700">{feature}</span>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -193,7 +182,8 @@ export default function DaiaInstrumentsPage() {
         <section className="bg-gradient-to-r from-[#0057B8] to-[#003865] rounded-lg p-8 md:p-12 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">¿Listo para monitorear tu cadena de frío?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Ayudamos a las empresas a optimizar sus procesos, reducir riesgos operativos y tomar decisiones basadas en datos en tiempo real.
+            Ayudamos a las empresas a optimizar sus procesos, reducir riesgos operativos
+            y tomar decisiones basadas en datos en tiempo real.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contacto?interes=daia-instruments">

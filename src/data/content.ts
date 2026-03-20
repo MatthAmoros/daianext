@@ -55,10 +55,10 @@ export const products: Product[] = [
   {
     id: 'daia-instruments',
     name: 'Daia Instruments',
-    description: 'Solución IoT para monitorear tu cadena de frío con sensores inalámbricos y alarmas oportunas por WhatsApp.',
+    description: 'Termometría con alarmas en tiempo real. Plataforma IoT con sensores inalámbricos diseñada para la agroindustria.',
     features: [
-      'Sensores inalámbricos de temperatura',
-      'Alarmas automáticas por WhatsApp',
+      'Sensores inalámbricos sin cableado invasivo',
+      'Alarmas y reportes automáticos por WhatsApp',
       'Plataforma cloud siempre disponible',
       'Trazabilidad de folios por cámara'
     ],
